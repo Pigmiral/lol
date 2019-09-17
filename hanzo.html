@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<title>Bom - objectos del navegador</title>
+<body>
+    <h2>Funciones de objeto window</h2>
+<p>
+<input type="button" value="abrir    'ventana hija'" onclick="abrirventanahija()"/>
+<input type="button" value="cerrar    'ventano hija'" onclick="cerrarventanahija()"/>
+
+
+</p>
+<script>
+var detallesnavegador=window.navigator.appName+'   '+window.navigator.appVersion;
+document.write("<h2>Detalles del navegador </h2> <p>"+detallesnavegador+"</p>");
+
+var ventanahija;
+function abrirventanahija(){
+ventanahija=window.open("","","width-400, height-200,top-100,left-100");
+ventanahija.document.title="ventana hija";
+
+
+titulo=document.createElement("h1");
+
+
+titulo_text=document.createTextNode("titulo en h1");
+
+titulo.appendChild(titulo_text);
+
+ventanahija.document.body.appendChild(titulo);
+}
+function cerraventahija(){
+    if(ventanahija !=undefined){
+ ventanohija.close();
+ ventanohija=undefined;
+
+
+    }else{
+        alert("no hay ventana hija por cerrar")
+    }
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
